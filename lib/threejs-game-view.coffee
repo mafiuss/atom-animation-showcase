@@ -2,7 +2,9 @@
 THREE = require "three"
 
 module.exports =
-class ThreejsExamplesView extends View
+class ThreejsGameView extends View
+  SCREEN_WIDTH: window.innerWidth
+  SCREEN_HEIGHT: window.innerHeight
   mouseX: 0
   mouseY: 0
   windowHalfX: window.innerWidth / 2
@@ -19,15 +21,15 @@ class ThreejsExamplesView extends View
       @div class: "viewer", mousemove: 'onDocumentMouseMove', outlet: "threeContainer"
 
   initialize: (serializeState) ->
-    console.log 'inita'
-    atom.workspaceView.command "threejs-examples:toggle", => @toggle()
+    console.log 'init'
+    atom.workspaceView.command "threejs-examples:doggle", => @doggle()
 
   serialize: ->
 
   destroy: ->
     @detach()
 
-  toggle: ->
+  doggle: ->
     console.log "ThreejsExamplesView was toggled!"
     if @hasParent()
       @detach()
@@ -48,7 +50,7 @@ class ThreejsExamplesView extends View
 
     @scene = new THREE.Scene()
     @renderer = new THREE.CanvasRenderer()
-    @renderer.setSize(window.innerWidth, window.innerHeight)
+    @renderer.setSize(@SCREEN_WIDTH, @SCREEN_HEIGHT)
     @threeContainer.empty()
     @threeContainer.append(@renderer.domElement)
 
@@ -64,23 +66,30 @@ class ThreejsExamplesView extends View
 
     material = new THREE.SpriteCanvasMaterial options
 
-    geometry = new THREE.Geometry()
-
     for n in [0...100]
-      # console.log "creating particle: #{n}"
       particle = new THREE.Sprite material
       particle.position.x = Math.random() * 2 - 1
       particle.position.y = Math.random() * 2 - 1
       particle.position.z = Math.random() * 2 - 1
       particle.position.normalize()
       particle.position.multiplyScalar(Math.random() * 10 + 450)
-      particle.scale.x = particle.scale.y = 10
+      particle.scale.multiplyScalar 2
       @scene.add particle
-      geometry.vertices.push particle.position
 
-    # lines
-    line = new THREE.Line(geometry, new THREE.LineBasicMaterial({color: 0xffffff, opacity: 0.5}))
-    @scene.add line
+
+
+    for n in [0...300]
+      geometry = new THREE.Geometry()
+      vertex = new THREE.Vector3(Math.random() * 2 - 1, Math.random() * 2 - 1, Math.random() * 2 - 1)
+      vertex.normalize()
+      vertex.multiplyScalar 450
+      vertex2 = vertex.clone()
+      geometry.vertices.push(vertex)
+      vertex2.multiplyScalar(Math.random() * 0.3 + 1)
+      geometry.vertices.push vertex2
+
+      line = new THREE.Line(geometry, new THREE.LineBasicMaterial({color: 0xffffff, opacity: Math.random()}))
+      @scene.add line
 
   animate: =>
     try

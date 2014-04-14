@@ -9,3 +9,4 @@
 # https://atom.io/docs/latest/advanced/keymaps
 '.workspace':
   'ctrl-alt-o': 'threejs-examples:toggle'
+  'ctrl-alt-0': 'threejs-examples:doggle'
