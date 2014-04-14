@@ -1,9 +1,11 @@
 {
   "name": "threejs-examples",
   "main": "./lib/threejs-examples",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "A short description of your package",
-  "activationEvents": ["threejs-examples:toggle"],
+  "activationEvents": [
+    "threejs-examples:toggle"
+  ],
   "repository": "https://github.com/Pastiche/atom-threejs-examples.git",
   "license": "MIT",
   "engines": {
