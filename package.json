@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "description": "A short description of your package",
   "activationEvents": ["threejs-examples:toggle"],
-  "repository": "https://github.com/atom/threejs-examples",
+  "repository": "https://github.com/Pastiche/atom-threejs-examples.git",
   "license": "MIT",
   "engines": {
     "atom": ">0.50.0"
