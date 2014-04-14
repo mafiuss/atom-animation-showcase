@@ -1,0 +1,16 @@
+# See https://atom.io/docs/latest/creating-a-package#menus for more details
+'context-menu':
+  '.overlayer':
+      'Enable threejs-examples': 'threejs-examples:toggle'
+
+'menu': [
+  {
+    'label': 'Packages'
+    'submenu': [
+      'label': 'threejs-examples'
+      'submenu': [
+        { 'label': 'Toggle', 'command': 'threejs-examples:toggle' }
+      ]
+    ]
+  }
+]
