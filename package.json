@@ -1,7 +1,7 @@
 {
   "name": "threejs-examples",
   "main": "./lib/threejs-examples",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "description": "threejs + coffeescript + atom = purefun",
   "activationEvents": [
     "threejs-examples:toggle",
