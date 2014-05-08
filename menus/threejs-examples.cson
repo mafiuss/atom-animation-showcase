@@ -9,7 +9,8 @@
     'submenu': [
       'label': 'threejs-examples'
       'submenu': [
-        { 'label': 'Toggle', 'command': 'threejs-examples:toggle' }
+        { 'label': 'Example1', 'command': 'threejs-examples:toggle' }
+        { 'label': 'Example2', 'command': 'threejs-examples:example2' }
       ]
     ]
   }

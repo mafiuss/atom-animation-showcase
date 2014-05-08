@@ -22,15 +22,15 @@ class ThreejsGameView extends View
 
   initialize: (serializeState) ->
     console.log 'init'
-    atom.workspaceView.command "threejs-examples:doggle", => @doggle()
+    atom.workspaceView.command "threejs-examples:example2", => @example2()
 
   serialize: ->
 
   destroy: ->
     @detach()
 
-  doggle: ->
-    console.log "ThreejsExamplesView was toggled!"
+  example2: ->
+    console.log "ThreejsExamplesGameView was toggled!"
     if @hasParent()
       @detach()
     else
@@ -53,7 +53,6 @@ class ThreejsGameView extends View
     @renderer.setSize(@SCREEN_WIDTH, @SCREEN_HEIGHT)
     @threeContainer.empty()
     @threeContainer.append(@renderer.domElement)
-
 
     #particles
     PI2 = Math.PI * 2
@@ -105,5 +104,9 @@ class ThreejsGameView extends View
     @renderer.render(@scene, @camera)
 
   onDocumentMouseMove: (event) ->
-    @mouseX = event.clientX - @windowHalfX
-		@mouseY = event.clientY - @windowHalfY
+    if event?
+      @mouseX = event.clientX - @windowHalfX
+      @mouseY = event.clientY - @windowHalfY
+    else
+      console.error "Unexpected error"
+      console.log event

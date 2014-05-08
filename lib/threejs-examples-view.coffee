@@ -96,5 +96,9 @@ class ThreejsExamplesView extends View
     @renderer.render(@scene, @camera)
 
   onDocumentMouseMove: (event) ->
-    @mouseX = event.clientX - @windowHalfX
-		@mouseY = event.clientY - @windowHalfY
+    if event?
+      @mouseX = event.clientX - @windowHalfX
+      @mouseY = event.clientY - @windowHalfY
+    else
+      console.error "something went wrong"
+      console.error event

@@ -6,6 +6,7 @@ module.exports =
   threejsGameView: null
 
   activate: (state) ->
+    console.log "activating."
     @threejsExamplesView = new ThreejsExamplesView(state.threejsExamplesViewState)
     @threejsGameView = new ThreejsGameView(state.threejsGameViewState)
 

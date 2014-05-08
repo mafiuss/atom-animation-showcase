@@ -5,7 +5,7 @@
   "description": "threejs + coffeescript + atom = purefun",
   "activationEvents": [
     "threejs-examples:toggle",
-    "threejs-examples:doggle"
+    "threejs-examples:example2"
   ],
   "repository": "https://github.com/Pastiche/atom-threejs-examples.git",
   "license": "MIT",
