@@ -1,5 +1,5 @@
 {
-  "name": "threejs-examples",
+  "name": "animation-showcase",
   "main": "./lib/threejs-examples",
   "version": "0.6.0",
   "description": "threejs + coffeescript + atom = purefun",
@@ -7,7 +7,7 @@
     "threejs-examples:toggle",
     "threejs-examples:example2"
   ],
-  "repository": "https://github.com/Pastiche/atom-threejs-examples.git",
+  "repository": "https://github.com/mafiuss/atom-animation-showcase.git",
   "license": "MIT",
   "engines": {
     "atom": ">0.50.0"
