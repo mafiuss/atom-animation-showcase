@@ -5,4 +5,4 @@ This package aims to showcase some examples from threejs site(http://threejs.org
 
 Run from within the command panel. Search for threejs
 
-![A screenshot of your spankin' package](https://docs.google.com/file/d/0BzQK96Cl3w3mbTZ2Si1naHpoMG8)
+![A screenshot of your spankin' package](https://db.tt/t12R6Vly)
